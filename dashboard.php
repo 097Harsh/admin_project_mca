@@ -2,11 +2,16 @@
 session_start();
 //$admin = $_SESSION['admin_id'];
 //echo $admin;
-//print_r($_SESSION['admin_id']);
+//print_r($_SESSION['admin_id']);exit();
 /*session_destroy();
 print_r($_SESSION);
 */
-print_r($_COOKIE);exit();
+//print_r($_COOKIE);exit();
+
+if(!isset($_SESSION['admin_id']))
+{
+    header('location:index.php');
+}
 
 ?>
 <!doctype html>

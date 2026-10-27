@@ -28,7 +28,10 @@ if(isset($_POST['submit']))
       $role = $row->role_id;
       //echo $role;exit();
      // print_r($row);exit();
-      if($role == 2) $_SESSION['user_id'] = $row->user_id;
+      if($role == 2) { 
+        $_SESSION['user_id'] = $row->user_id;
+        header("location:user/home.php");
+      }
       elseif ($role == 1) {
          # code...
           $_SESSION['admin_id'] = $row->user_id;
